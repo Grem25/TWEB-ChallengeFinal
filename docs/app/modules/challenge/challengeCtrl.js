@@ -27,8 +27,29 @@
 			vm.test = 'hello je suis un test';
 			vm.test2 = "Before press button";
 
+			vm.responseGet = "Avant get";
+			vm.sendPost = "envoie depuis angularJS";
+
 			vm.testService = function(){
 				 vm.test2 = challengeService.test("After press");
+			}
+
+			vm.get = function(){
+				challengeService.getTest()
+					.then((data) => {
+						vm.responseGet = data;
+						$scope.$apply();
+					});			
+
+			}
+
+			vm.post = function(send){
+					challengeService.postTest(send)
+					.then((data) => {
+						vm.sendPost = data.data;
+						$scope.$apply();
+						vm.sendPost = "envoie depuis angularJS";
+					});				
 			}
 		}
 

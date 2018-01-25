@@ -5,6 +5,12 @@
             <p>{{vm.test}}</p>
             <button ng-click="vm.testService()">Test</button>
             <p>{{vm.test2}}</p>
+
+            <button ng-click="vm.get()">Get</button>
+            <p>{{vm.responseGet}}</p>
+
+            <button ng-click="vm.post(vm.sendPost)">Post</button>
+            <p>{{vm.sendPost}}</p>
         </md-card-content>
     </md-card>
 </div>
